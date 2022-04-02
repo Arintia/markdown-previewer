@@ -1,4 +1,4 @@
-## Simple Markdown Previewer by Yiğit ATAK
+## Simple Markdown Previewer by Yiğit Atak
 ![Simple Markdown Previewer](./assets/1.PNG)
 ![Simple Markdown Previewer](./assets/2.PNG)
 
