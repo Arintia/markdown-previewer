@@ -1,0 +1,15 @@
+.colorPicker {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: red;
+    border: 5px solid #000;
+    margin-right: 15px;
+}
+
+.colorPicker:hover {
+    cursor: pointer;
+    height: 37px;
+    width: 37px;
+    transition: height 0.25s, width 0.25s;
+}
