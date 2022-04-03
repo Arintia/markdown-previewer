@@ -1,0 +1,33 @@
+a.name {
+    color: #696969;
+}
+
+a.github {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.githubLogo {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #fff;
+    height: 3.5vw;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+}
