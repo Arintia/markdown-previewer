@@ -1,6 +1,6 @@
 ## Simple Markdown Previewer by Yiğit Atak
-![Simple Markdown Previewer](./assets/img/1.PNG)
-![Simple Markdown Previewer](./assets/img/2.PNG)
+![Simple Markdown Previewer](./src/assets/img/1.PNG)
+![Simple Markdown Previewer](./src/assets/img/2.PNG)
 
 ### About the project
 This is a very simple markdown previewer I made while learning React. For now, this isn't supposed to be an amazing tool that can replace the ones you can find online but I'll keep working on this project to improve it further. Suggestions for further improvement are welcome. Check the to-do list down below for my current road map for this project.

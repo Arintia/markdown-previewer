@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import MarkdownIt from 'markdown-it';
 import styles from './style/App.module.css';
 import ColorPicker from '../ColorPicker/ColorPicker';
+import Footer from '../Footer/Footer';
 
 function App() {
   const [markDown, setMarkDown] = useState("### Enter your markdown here...");
@@ -10,14 +11,14 @@ function App() {
   const [outputTxt, setOutputTxt] = useState();
   const themeColors = [
       {
-        id: 0,
-        bgColor: "#fff",
-        color: "#000"
-      },
-      {
-        id: 1, 
+        id: 0, 
         bgColor: "#3a3a3a",
         color: "#fff"
+      },
+      {
+        id: 1,
+        bgColor: "#fff",
+        color: "#000"
       },
       {
         id: 2, 
@@ -72,27 +73,30 @@ function App() {
   }, [currentColorBtn])
 
   return (
-    <main className={styles.appContainer}>
-      <h1 className={styles.appHeader}>Markdown Previewer</h1>
-      <div className={styles.inputAreaContainer}>
-        <div className={styles.colorContainer}>
-          {themeColors.map((color) => 
-            <ColorPicker 
-              key={color.id} 
-              bgColor={color.bgColor} 
-              color={color.color} 
-              handleColor={handleColor}
-              setColorBtn={setColorBtn}
-              currentColorBtn={currentColorBtn} 
-            />
-          )}
-        
+    <>
+      <main className={styles.appContainer}>
+        <h1 className={styles.appHeader}>Markdown Previewer</h1>
+        <div className={styles.inputAreaContainer}>
+          <div className={styles.colorContainer}>
+            {themeColors.map((color) => 
+              <ColorPicker 
+                key={color.id} 
+                bgColor={color.bgColor} 
+                color={color.color} 
+                handleColor={handleColor}
+                setColorBtn={setColorBtn}
+                currentColorBtn={currentColorBtn} 
+              />
+            )}
+          
+          </div>
+          <textarea className={styles.inputArea} value={markDown} onChange={(e) => setMarkDown(e.target.value)}></textarea>
+          <button className={styles.clearButton} onClick={handleClear}>Clear</button>
+          <div className={styles.outputArea}></div>
         </div>
-        <textarea className={styles.inputArea} value={markDown} onChange={(e) => setMarkDown(e.target.value)}></textarea>
-        <button className={styles.clearButton} onClick={handleClear}>Clear</button>
-        <div className={styles.outputArea}></div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
 

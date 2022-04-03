@@ -37,7 +37,8 @@
 
 .inputArea {
   font-family: 'Roboto', sans-serif;
-  background-color: #fff;
+  background-color: #3a3a3a;
+  color: #fff;
   width: 35vw;
   height: 35vw;
   border: none;
@@ -62,7 +63,8 @@
 
 .outputArea {
   font-family: 'Roboto', sans-serif;
-  background-color: #fff;
+  background-color: #3a3a3a;
+  color: #fff;
   width: 35vw;
   height: 35vw;
   overflow-y: auto;
