@@ -39,6 +39,26 @@ function App() {
         id: 5, 
         bgColor: "#ffe477",
         color: "#000"
+      },
+      {
+        id: 6,
+        bgColor: "#34568B",
+        color: "#fff"
+      },
+      {
+        id: 7,
+        bgColor: "#FF6F61",
+        color: "#000"
+      },
+      {
+        id: 8,
+        bgColor: "#955251",
+        color: "#fff"
+      },
+      {
+        id: 9,
+        bgColor: "#88B04B",
+        color: "#fff"
       }
   ];
   const handleClear = () => {
