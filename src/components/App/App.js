@@ -1,13 +1,45 @@
 import { useEffect, useState } from 'react';
 import MarkdownIt from 'markdown-it';
 import styles from './style/App.module.css';
+import ColorPicker from '../ColorPicker/ColorPicker';
 
 function App() {
   const [markDown, setMarkDown] = useState("### Enter your markdown here...");
   const [currentColorBtn, setColorBtn] = useState();
   const [inputTxt, setInputTxt] = useState();
   const [outputTxt, setOutputTxt] = useState();
-
+  const themeColors = [
+      {
+        id: 0,
+        bgColor: "#fff",
+        color: "#000"
+      },
+      {
+        id: 1, 
+        bgColor: "#3a3a3a",
+        color: "#fff"
+      },
+      {
+        id: 2, 
+        bgColor: "#7effdb",
+        color: "#000"
+      },
+      {
+        id: 3, 
+        bgColor: "#ff9de2",
+        color: "#000"
+      },
+      {
+        id: 4, 
+        bgColor: "purple",
+        color: "#fff"
+      },
+      {
+        id: 5, 
+        bgColor: "#ffe477",
+        color: "#000"
+      }
+  ];
   const handleClear = () => {
     inputTxt.value = "";
     setMarkDown("");
@@ -33,8 +65,6 @@ function App() {
   useEffect(() => {
     setInputTxt(document.getElementsByClassName(styles.inputArea)[0]);
     setOutputTxt(document.getElementsByClassName(styles.outputArea)[0]);
-    setColorBtn(document.getElementsByClassName(styles.colorPicker)[0]);
-    currentColorBtn && (currentColorBtn.style.border = "5px solid #137de7");
   }, []);
 
   useEffect(() => {
@@ -46,54 +76,17 @@ function App() {
       <h1 className={styles.appHeader}>Markdown Previewer</h1>
       <div className={styles.inputAreaContainer}>
         <div className={styles.colorContainer}>
-          <button 
-            style={{backgroundColor: "#fff"}} 
-            className={styles.colorPicker} 
-            data-bgcolor="#fff"
-            data-color="#000"
-            onClick={handleColor}
-          >
-          </button>
-          <button 
-            style={{backgroundColor: "#3a3a3a"}} 
-            className={styles.colorPicker} 
-            data-bgcolor="#3a3a3a"
-            data-color="#fff"
-            onClick={handleColor}
-          >
-          </button>
-          <button 
-            style={{backgroundColor: "#7effdb"}} 
-            className={styles.colorPicker} 
-            data-bgcolor="#7effdb "
-            data-color="#000000"
-            onClick={handleColor}
-          >
-          </button>
-          <button 
-            style={{backgroundColor: "#ff9de2 "}} 
-            className={styles.colorPicker} 
-            data-bgcolor="#ff9de2 "
-            data-color="#000"
-            onClick={handleColor}
-          >
-          </button>
-          <button 
-            style={{backgroundColor: "purple"}}
-            className={styles.colorPicker} 
-            data-bgcolor="purple"
-            data-color="#fff"
-            onClick={handleColor}
-          >
-          </button>
-          <button 
-            style={{backgroundColor: "#ffe477"}} 
-            className={styles.colorPicker} 
-            data-bgcolor="#ffe477"
-            data-color="#000"
-            onClick={handleColor}
-          >
-          </button>
+          {themeColors.map((color) => 
+            <ColorPicker 
+              key={color.id} 
+              bgColor={color.bgColor} 
+              color={color.color} 
+              handleColor={handleColor}
+              setColorBtn={setColorBtn}
+              currentColorBtn={currentColorBtn} 
+            />
+          )}
+        
         </div>
         <textarea className={styles.inputArea} value={markDown} onChange={(e) => setMarkDown(e.target.value)}></textarea>
         <button className={styles.clearButton} onClick={handleClear}>Clear</button>
