@@ -31,6 +31,10 @@
   position: absolute;
 }
 
+.active {
+  border: 5px solid #137de7 !important;
+}
+
 .inputArea {
   font-family: 'Roboto', sans-serif;
   background-color: #fff;
