@@ -66,7 +66,7 @@ function App() {
             style={{backgroundColor: "#7effdb"}} 
             className={styles.colorPicker} 
             data-bgcolor="#7effdb "
-            data-color="#000"
+            data-color="#000000"
             onClick={handleColor}
           >
           </button>
