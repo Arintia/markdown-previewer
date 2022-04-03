@@ -46,7 +46,7 @@ function App() {
   }
 
   const handleColor = e => {
-    currentColorBtn.style.border = "5px solid #000";
+    currentColorBtn.classList.toggle(styles.active);
     setColorBtn(e.target);
     const bgColor = e.target.dataset.bgcolor;
     const textColor = e.target.dataset.color;
@@ -68,7 +68,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    currentColorBtn && (currentColorBtn.style.border = "5px solid #137de7");
+    currentColorBtn && (currentColorBtn.classList.toggle(styles.active));
   }, [currentColorBtn])
 
   return (
