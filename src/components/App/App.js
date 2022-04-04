@@ -65,7 +65,7 @@ function App() {
                 <ul ref={provided.innerRef} {...provided.droppableProps}>
                   {colors.map(({id, bgColor, color}, index) => 
                     <li key={id}>
-                      <Draggable  draggableId={id.toString()} index={index}>
+                      <Draggable draggableId={id.toString()} index={index}>
                         {(provided) => (
                           <div 
                             className={styles.colorButton} 
@@ -91,7 +91,6 @@ function App() {
                 </ul>
               )}
             </Droppable>
-          
           </div>
           <textarea className={styles.inputArea} value={markDown} onChange={(e) => setMarkDown(e.target.value)}></textarea>
           <button className={styles.clearButton} onClick={handleClear}>Clear</button>
