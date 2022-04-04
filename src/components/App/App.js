@@ -17,6 +17,7 @@ function App() {
   }
 
   const handleColor = e => {
+    if(currentColorBtn === e.target) return;
     currentColorBtn.classList.toggle(styles.active);
     setColorBtn(e.target);
     const bgColor = e.target.dataset.bgcolor;
@@ -48,11 +49,11 @@ function App() {
         <h1 className={styles.appHeader}>Markdown Previewer</h1>
         <div className={styles.inputAreaContainer}>
           <div className={styles.colorContainer}>
-            {themeColors.map((color) => 
+            {themeColors.map(({id, bgColor, color}) => 
               <ColorPicker 
-                key={color.id} 
-                bgColor={color.bgColor} 
-                color={color.color} 
+                key={id} 
+                bgColor={bgColor} 
+                color={color} 
                 handleColor={handleColor}
                 setColorBtn={setColorBtn}
                 currentColorBtn={currentColorBtn} 
