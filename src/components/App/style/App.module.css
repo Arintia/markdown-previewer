@@ -27,7 +27,7 @@
 
 .colorContainer {
   top: calc(100% - 95.75%);
-  left: 9.5%;
+  left: 7%;
   position: absolute;
 }
 
@@ -97,4 +97,16 @@
     background-color: #ffffff;
     border-radius: 60px;
     border: 8px solid #ffffff;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: inline;
+  }
+
+  .colorButton {
+    display: inline;
   }
