@@ -9,6 +9,8 @@ This is a very simple markdown previewer I made while learning React. For now, t
 This project uses multiple libraries and frameworks. All the libraries and frameworks are subject to change as development continues.
 - [React](https://tr.reactjs.org/)
 - [Markdown-It](https://github.com/markdown-it/markdown-it)
+- [react-lineicons](https://www.npmjs.com/package/react-lineicons)
+- [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
 
 ### Getting Started
 You need the following tools for installation:
