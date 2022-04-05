@@ -7,8 +7,10 @@ import themeColors from '../../utils/themecolors';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd' ;
 
 function App() {
-  const [markDown, setMarkDown] = useState("### Enter your markdown here...");
-  const [currentColorBtn, setColorBtn] = useState();
+  const initialMarkdown = localStorage.getItem("markdown");
+  const initialColor = localStorage.getItem("color");
+  const [markDown, setMarkDown] = useState(initialMarkdown == null ? "### Enter your markdown here..." : initialMarkdown);
+  const [currentColorBtn, setColorBtn] = useState(initialColor == null ? 0 : initialColor);
   const [inputTxt, setInputTxt] = useState();
   const [outputTxt, setOutputTxt] = useState();
   const [colors, setColors] = useState(themeColors);
@@ -43,6 +45,7 @@ function App() {
     const md = new MarkdownIt();
     const outputDiv = document.getElementsByClassName(styles.outputArea)[0];
     outputDiv && (outputDiv.innerHTML = md.render(markDown));
+    localStorage.setItem("markdown", markDown);
   }, [markDown]);
 
   useEffect(() => {
