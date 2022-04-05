@@ -8,9 +8,8 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd' ;
 
 function App() {
   const initialMarkdown = localStorage.getItem("markdown");
-  const initialColor = localStorage.getItem("color");
   const [markDown, setMarkDown] = useState(initialMarkdown == null ? "### Enter your markdown here..." : initialMarkdown);
-  const [currentColorBtn, setColorBtn] = useState(initialColor == null ? 0 : initialColor);
+  const [currentColorBtn, setColorBtn] = useState();
   const [inputTxt, setInputTxt] = useState();
   const [outputTxt, setOutputTxt] = useState();
   const [colors, setColors] = useState(themeColors);
