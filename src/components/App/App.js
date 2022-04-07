@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import MarkdownIt from 'markdown-it';
 import styles from './style/App.module.css';
 import ColorPicker from '../ColorPicker/ColorPicker';
@@ -14,13 +14,13 @@ function App() {
   const [outputTxt, setOutputTxt] = useState();
   const [colors, setColors] = useState(themeColors);
 
-  function handleOnDragEnd(result) {
+  const onDragEnd = useCallback(result => {
     if (!result.destination) return;
     const items = Array.from(colors);
     const [reordered] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reordered);
     setColors(items);
-  }
+  }, [colors]);
     
 
   const handleClear = () => {
@@ -57,7 +57,7 @@ function App() {
   }, [currentColorBtn])
 
   return (
-    <DragDropContext onDragEnd={handleOnDragEnd}>
+    <DragDropContext onDragEnd={onDragEnd}>
       <main className={styles.appContainer}>
         <h1 className={styles.appHeader}>Markdown Previewer</h1>
         <div className={styles.inputAreaContainer}>
