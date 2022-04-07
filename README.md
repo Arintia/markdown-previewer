@@ -34,7 +34,7 @@ This project can be used for when you're writing out a markdown file for your ow
 - [ ] Refactor code to be a lot clearer
 - [X] Turn color buttons into a component
 - [X] Add more background color options
-- [ ] Work on the front-end design to make the app more visually appealing
+- [X] Work on the front-end design to make the app more visually appealing
 - [X] Add a footer
 - [ ] Custom MD parser allowing for more customization and a preview that looks a lot better
 - [ ] Responsive design, currently the app is horrible on different viewports
